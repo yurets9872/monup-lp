@@ -2,7 +2,7 @@
   --primary-white: #ffffff;
   --primary-black: #212121;
   --border: #e6e6e6;
-  --placeholder: #959595;
+  --placeholder: #bebebe;
 }
 
 
@@ -32,6 +32,7 @@ margin-bottom: 64px
 .header__nav{
   float: left;
   margin: 0 auto;
+  visibility: hidden;
 }
 .header__nav a{
   width: 45px;
@@ -59,6 +60,8 @@ margin-bottom: 64px
   margin: auto;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 1000;
 }
 .content-left__heading{
   max-width: 550px;
@@ -73,13 +76,19 @@ margin-bottom: 64px
 }
 .heading__copy{
   font-family: 'CircularStd-Book';
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.4;
   text-align: left;
   color: var(--primary-white);
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 .content-left__signup-form{
-  margin: 56px 0 0;
+  margin: 48px 0 0;
+  /* padding: 24px 8px 32px 24px; */
+  padding: 32px;
+  background-color: var(--primary-white);
+  border-radius: 3px;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08);
 }
 .signup-form__input{
   font-family: 'CircularStd-Book';
@@ -91,10 +100,15 @@ margin-bottom: 64px
   border-radius: 3px;
   padding: 14px 16px;
   margin-right: 8px;
-  box-sizing: border-box;
-  background-color: var(--primary-white);
+  box-sizing: content-box;
+  background-color: #fbfbfb;
   border: solid 1px var(--border);
+  transition: background-color .15s ease-in-out;
 }
+.signup-form__input:focus{
+  background: var(--primary-white);
+}
+
 .signup-form__input::placeholder{
   color: var(--placeholder);
 }
@@ -106,16 +120,67 @@ margin-bottom: 64px
   color: var(--primary-white);
   padding: 14px 16px;
   border-radius: 3px;
-  background-color: rgba(0, 108, 34, 0.4);
+  cursor: pointer;
+  background-color: rgba(23, 177, 103, 0.9);
+  border: 1px solid rgba(23, 177, 103, 1);
+  transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  /* transition: width 2s linear 1s;  */
+}
+.signup-form__submit:hover{
+  background-color: rgba(23, 177, 103, 1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+}
+.signup-form__submit:active{
+  background-color: #0A9A59;
+  box-shadow: none;
 }
 .signup-form__subtitle{
   font-family: 'CircularStd-Book',sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   text-align: left;
-  margin-top: 16px;
-  color: var(--primary-white);
+  margin: 8px 0 24px;
+  color: rgba(23, 177, 103, 1);
+  color: #6a6a6a;
+}
+.signup-form__subtitle span{
+  font-size: 18px;
 }
 
+.content-socials{
+  max-width: 550px;
+  margin-top: 40px;
+}
+
+.socials__caption{
+  font-family: "CircularStd-Book";
+  font-size: 16px;
+  text-align: left;
+  color: var(--primary-white);
+  margin-bottom: 32px
+}
+.socials__twitter, .socials__telegram{
+  padding: 8px 12px;
+  background-color: rgba(255,255,255,0.24);
+  border-radius: 3px;
+  font-family: 'CircularStd-Book',sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: left;
+  color: var(--primary-white);
+  margin-right: 16px;
+  transition: background-color .15s ease-in-out;
+}
+.socials__twitter img, .socials__telegram img{
+  width: 20px;
+  margin-right: 8px;
+}
+.socials__twitter:hover{
+  background-color: rgba(255,255,255,0.40);
+}
+  .socials__telegram:hover{
+  background-color: rgba(255,255,255,0.40);
+
+}
 
 .content-right{
   position: relative;
@@ -133,15 +198,18 @@ margin-bottom: 64px
 }
 
 
+
 .Bg_image{
   background-image: url(../img/rounds.svg);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-position: 250% 50%;
-    background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-position: 250% 50%;
+  background-repeat: no-repeat;
+  z-index: 100;
+  display: none;
 }
 
 
@@ -149,15 +217,16 @@ margin-bottom: 64px
 
 footer{
   width: 100%;
-  height: 64px;
   background-color: var(--primary-white);
   position: absolute;
   bottom: 0;
-  display: flex;
 }
 .footer__container{
   max-width: 1140px;
+  width: 100%;
+  height: 64px;
   margin: auto;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -166,4 +235,19 @@ footer{
   font-size: 14px;
   text-align: left;
   color: #9f9f9f;
+}
+.footer__languages{
+  font-family: 'CircularStd-Book',sans-serif;
+  font-size: 15px;
+  text-align: left;
+  height: 24px;
+  color: var(--primary-black);
+  display: flex;
+  align-items:center;
+}
+.footer__languages span{
+  font-size: 22px;
+  height: 24px;
+  text-align: left;
+  margin-top: 4px;
 }
