@@ -146,6 +146,15 @@ margin-bottom: 64px
   font-size: 18px;
 }
 
+.signup-form__error{
+  font-family: 'CircularStd-BookItalic',sans-serif;
+  font-size: 13px;
+  text-align: left;
+  margin: 16px 0 0;
+  color: #6a6a6a;
+  display: none;
+}
+
 .content-socials{
   max-width: 550px;
   margin-top: 40px;
@@ -191,10 +200,16 @@ margin-bottom: 64px
     right: 132px;
     z-index: 10;
 }
+.content-right__iphone img{
+  width: 100%;
+}
 .content-right__pixel{
   position: absolute;
     top: 56px;
     z-index: 9;
+}
+.content-right__pixel img{
+  width: 100%;
 }
 
 
@@ -250,4 +265,28 @@ footer{
   height: 24px;
   text-align: left;
   margin-top: 4px;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+
+
+
+@media screen and (max-width:1280px){
+  header{
+    margin-bottom: 32px;
+  }
+  .content-right__iphone{
+    max-width: 300px;
+    width: 100%;
+  }
+  .content-right__pixel{
+    max-width: 300px;
+    width: 100%;
+    top: 48px;
+  }
 }
