@@ -5,12 +5,30 @@
   --placeholder: #bebebe;
 }
 
+* {
+ box-sizing: border-box;
+}
+*:before,
+*:after {
+ box-sizing: border-box;
+}
 
 body{
   /* background: linear-gradient(119deg, #00cc81, #d5e969); */
   background-image: linear-gradient(137deg, #00CC81 0%, #D5E969 100%);
-  height: 1vh;
+  height: 100%;
+  position: relative;
+
 }
+
+.wrapper{
+ min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 64px; /* height of your footer */
+}
+
 header{
 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0));
 margin-bottom: 64px
@@ -62,6 +80,8 @@ margin-bottom: 64px
   justify-content: space-between;
   position: relative;
   z-index: 1000;
+  margin-bottom: 80px;
+
 }
 .content-left__heading{
   max-width: 550px;
@@ -87,7 +107,7 @@ margin-bottom: 64px
   /* padding: 24px 8px 32px 24px; */
   padding: 32px;
   background-color: var(--primary-white);
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08);
 }
 .signup-form__input{
@@ -165,7 +185,7 @@ margin-bottom: 64px
   font-size: 16px;
   text-align: left;
   color: var(--primary-white);
-  margin-bottom: 32px
+  margin-bottom: 24px
 }
 .socials__twitter, .socials__telegram{
   padding: 8px 12px;
@@ -199,14 +219,18 @@ margin-bottom: 64px
   position: absolute;
     right: 132px;
     z-index: 10;
+    max-width: 330px;
+    width: 100%;
 }
 .content-right__iphone img{
   width: 100%;
 }
 .content-right__pixel{
   position: absolute;
-    top: 56px;
+    top: 48px;
     z-index: 9;
+    max-width: 300px;
+    width: 100%;
 }
 .content-right__pixel img{
   width: 100%;
@@ -235,6 +259,7 @@ footer{
   background-color: var(--primary-white);
   position: absolute;
   bottom: 0;
+  height: 64px;
 }
 .footer__container{
   max-width: 1140px;
@@ -268,17 +293,15 @@ footer{
 }
 
 
-
-
-
 /* MEDIA QUERIES */
 
 
-
-
-@media screen and (max-width:1280px){
+@media screen and (max-width:1370px){
   header{
     margin-bottom: 32px;
+  }
+  .content-left{
+    margin-top: -40px;
   }
   .content-right__iphone{
     max-width: 300px;
@@ -288,5 +311,82 @@ footer{
     max-width: 300px;
     width: 100%;
     top: 48px;
+  }
+}
+
+
+@media screen and (max-width:1024px) {
+  .header__container, .footer__container{
+    max-width: 960px;
+  }
+  .content{
+    max-width: 960px;
+  }
+  .content-left__heading {
+    max-width: 460px;
+  }
+  .heading__title{
+    font-size: 48px;
+  }
+  .heading__copy{
+    font-size: 16px;
+  }
+  .content-left__signup-form{
+    margin: 24 0 0;
+    padding: 24px;
+  }
+  .signup-form__input{
+    width: 240px;
+  }
+}
+
+
+@media screen and (max-width:800px) {
+  .header__container, .footer__container{
+    max-width: 720px;
+  }
+  .content{
+    max-width: 720px;
+    flex-wrap: wrap;
+  }
+
+  .content-left__heading {
+    max-width: 680px;
+  }
+  .heading__title{
+    font-size: 52px;
+  }
+  .heading__copy{
+    font-size: 18px;
+  }
+  .content-left__signup-form{
+    margin: 24 0 0;
+    padding: 24px;
+    width: 100%;
+    max-width: 560px;
+  }
+  .signup-form__input{
+    width: 320px;
+  }
+  .content-right {
+    margin: 64px auto;
+    position: relative;
+    width: 280px;
+    z-index: 100;
+  }
+  footer{
+    z-index: 1000;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .header__container, .footer__container{
+    max-width: 360px;
+  }
+  .content{
+    max-width: 360px;
+  }
+  .header__nav{
+    display: none;
   }
 }
