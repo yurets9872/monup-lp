@@ -21,6 +21,46 @@ body{
 
 }
 
+
+
+.modal-overlay{
+  display: none;
+  position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5000;
+}
+.modal-block{
+  width: 600px;
+  /* height: 320px; */
+  padding: 48px;
+  background: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.24);
+}
+.modal_emoji{
+  text-align: center;
+  font-size: 48px;
+}
+.modal_title{
+  text-align: center;
+  font-family: 'CircularStd-Medium', sans-serif;
+  font-size: 28px;
+  margin: 24px 0;
+}
+.modal_copy{
+  text-align: center;
+    font-family: 'CircularStd-Book', sans-serif;
+    font-size: 18px;
+    margin: 24px 0;
+    color: #959595;
+}
+
 .wrapper{
  min-height: 100vh; /* will cover the 100% of viewport */
  overflow: hidden;
@@ -50,7 +90,7 @@ margin-bottom: 64px
 .header__nav{
   float: left;
   margin: 0 auto;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 .header__nav a{
   width: 45px;
@@ -158,7 +198,7 @@ margin-bottom: 64px
   font-family: 'CircularStd-Book',sans-serif;
   font-size: 16px;
   text-align: left;
-  margin: 8px 0 24px;
+  margin: 4px 0 32px;
   color: rgba(23, 177, 103, 1);
   color: #6a6a6a;
 }
@@ -213,7 +253,8 @@ margin-bottom: 64px
 
 .content-right{
   position: relative;
-  width: 300px;
+  max-width: 350px;
+  width: 100%;
 }
 .content-right__iphone{
   position: absolute;
@@ -227,7 +268,8 @@ margin-bottom: 64px
 }
 .content-right__pixel{
   position: absolute;
-    top: 48px;
+    top: 96px;
+    right: 32px;
     z-index: 9;
     max-width: 300px;
     width: 100%;
@@ -366,7 +408,9 @@ footer{
     max-width: 560px;
   }
   .signup-form__input{
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .content-right {
     margin: 64px auto;
@@ -385,8 +429,109 @@ footer{
   }
   .content{
     max-width: 360px;
+    margin-bottom: 564px;
   }
   .header__nav{
     display: none;
+  }
+  .market-links__app-store{
+    margin-left: 10px;
+  }
+  .market-links__app-store img{
+    height: 28px;
+  }
+  .market-links__play-market img{
+    height: 28px;
+  }
+  .heading__title {
+    font-size: 44px;
+  }
+  .heading__copy{
+    font-size: 16px;
+  }
+  .signup-form{
+    width: 100%;
+    max-width: 360px;
+  }
+  .signup-form__submit{
+    max-width: 312px;
+    width: 100%;
+    margin-top: 16px;
+    text-align: center;
+  }
+  .content-right{
+    width: 100%;
+    right: -66px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .header__container, .footer__container{
+    max-width: 340px;
+  }
+  .content{
+    max-width: 340px;
+    margin-bottom: 564px;
+  }
+  .header__nav{
+    display: none;
+  }
+  .market-links__app-store{
+    margin-left: 10px;
+  }
+
+  .heading__title {
+    font-size: 44px;
+  }
+  .signup-form{
+    width: 100%;
+    max-width: 340px;
+  }
+  .signup-form__input{
+    max-width: 257px;
+    width: 100%;
+  }
+  .content-right{
+    width: 100%;
+    right: -66px;
+  }
+}
+@media screen and (max-width:320px) {
+  .header__container, .footer__container{
+    max-width: 290px;
+  }
+  .content{
+    max-width: 290px;
+    margin-bottom: 564px;
+  }
+  .header__logo{
+    height: 28px;
+  }
+  .header__nav{
+    display: none;
+  }
+  .market-links__app-store{
+    margin-left: 10px;
+  }
+  .market-links__app-store img{
+    height: 22px;
+  }
+  .market-links__play-market img{
+    height: 22px;
+  }
+  .heading__title {
+    font-size: 44px;
+  }
+  .signup-form{
+    width: 100%;
+    max-width: 340px;
+  }
+  .signup-form__input{
+    max-width: 257px;
+    width: 100%;
+  }
+  .content-right{
+    width: 100%;
+    right: -66px;
   }
 }
