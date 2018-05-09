@@ -87,6 +87,9 @@ margin-bottom: 64px
   object-fit: contain;
   float: left;
 }
+.header__logo{
+  width: 100%;
+}
 .header__nav{
   float: left;
   margin: 0 auto;
