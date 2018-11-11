@@ -479,10 +479,19 @@ footer{
     height: 28px;
   }
   .heading__title {
-    font-size: 44px;
+    font-size: 40px;
   }
   .heading__copy{
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .socials__buttons{
+    padding: 6px 10px;
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  .socials__buttons img{
+    width: 18px;
   }
   .signup-form{
     width: 100%;
@@ -498,11 +507,22 @@ footer{
     width: 100%;
     right: -66px;
   }
+  footer {
+    z-index: 1000;
+    height: 104px;
+}
+.footer__container{
+  display: flex;
+  flex-direction: column;
+}
+.footer__copyright{
+  padding: 28px 0;
+}
 }
 
 @media screen and (max-width:375px) {
   .header__container, .footer__container{
-    max-width: 340px;
+    max-width: 320px;
   }
   .content{
     max-width: 340px;
@@ -516,15 +536,25 @@ footer{
   }
 
   .heading__title {
-    font-size: 44px;
+    font-size: 38px;
   }
   .signup-form{
     width: 100%;
     max-width: 340px;
   }
   .signup-form__input{
-    max-width: 257px;
+    max-width: 292px;
     width: 100%;
+  }
+  .socials__buttons{
+  font-size: 0;
+  color: transparent;
+  margin-right: 16px;
+  }
+  .socials__buttons img{
+    width: 20px;
+    top: 8px;
+    left: 4px;
   }
   .content-right{
     width: 100%;
@@ -532,8 +562,12 @@ footer{
   }
 }
 @media screen and (max-width:320px) {
+  .wrapper{
+    padding-bottom: 0;
+  }
   .header__container, .footer__container{
-    max-width: 290px;
+    max-width: 320px;
+    padding: 0 16px;
   }
   .content{
     max-width: 290px;
@@ -554,9 +588,6 @@ footer{
   .market-links__play-market img{
     height: 22px;
   }
-  .heading__title {
-    font-size: 44px;
-  }
   .signup-form{
     width: 100%;
     max-width: 340px;
@@ -566,7 +597,8 @@ footer{
     width: 100%;
   }
   .content-right{
-    width: 100%;
-    right: -66px;
+    width: 80%;
+    right: -82px;
+
   }
 }
