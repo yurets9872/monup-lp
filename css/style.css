@@ -49,14 +49,15 @@ body{
 }
 .modal_title{
   text-align: center;
-  font-family: 'CircularStd-Medium', sans-serif;
+  font-family: 'Manrope-Medium',sans-serif;
   font-size: 28px;
   margin: 24px 0;
 }
 .modal_copy{
   text-align: center;
-    font-family: 'CircularStd-Book', sans-serif;
-    font-size: 18px;
+    font-family: 'Manrope-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
     margin: 24px 0;
     color: #959595;
 }
@@ -98,7 +99,7 @@ margin-bottom: 64px
 .header__nav a{
   width: 45px;
   height: 20px;
-  font-family: 'CircularStd-Book',sans-serif;
+  font-family: 'Manrope-Regular',sans-serif;
   font-size: 16px;
   padding: 0 20px;
   font-style: normal;
@@ -156,7 +157,7 @@ margin-bottom: 64px
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08);
 }
 .signup-form__input{
-  font-family: 'Manrope-Semibold';
+  font-family: 'Manrope-Semibold',sans-serif;
   font-size: 14px;
   line-height: 1.33;
   text-align: left;
