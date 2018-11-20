@@ -4,10 +4,11 @@
     $email_exp = '/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/';
 
     $user_email = $_POST['email'];
-    $email_subject = "User subscribtion";
-    $to = "<yurets.ua@gmail.com>";
-    $headers = "From: <$user_email>" . "\r\n" .
-    "Reply-To: <$user_email>";
+    $email_subject = 'User subscribtion';
+    $to = '<yurets.ua@gmail.com>';
+    $headers = 'From: $user_email' . "\r\n" .
+    'Reply-To: $user_email' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
     if(!preg_match($email_exp, $user_email)) {
       $error_message = 'The Email Address you entered does not appear to be valid.<br />';
