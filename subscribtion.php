@@ -1,4 +1,3 @@
-// todo: add sanitizing
 <?php
   if(isset($_POST['email'])) {
     $error_message = "";
@@ -12,7 +11,12 @@
     if(!preg_match($email_exp, $user_email)) {
       $error_message = 'The Email Address you entered does not appear to be valid.<br />';
     }
-    mail($to, $email_subject, $headers);
-    echo "should be sent";
+    $mail = mail($to, $email_subject, $headers);
+    echo $mail;
+    if ($mail) {
+      echo "Thank you for using our mail form";
+    } else {
+      echo "Mail sending failed."; 
+    }
   }
 ?>
