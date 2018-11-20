@@ -7,6 +7,7 @@
   $email_subject = "User subscribtion";
   $to = "hello@monup.co";
   $headers = "Reply-To: $user_email \r\n";
-  
+  echo $to;
+  echo $email_subject;
   mail($to, $email_subject, $headers);
 ?>
