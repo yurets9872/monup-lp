@@ -9,9 +9,7 @@ form.addEventListener('submit', (e) => {
     error.style.display = "block";
     error.innerHTML = 'Please, enter correct email!';
   } else {
-    console.log('processing');
     const xhr = new XMLHttpRequest();
-
     xhr.open('POST', form.action);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
