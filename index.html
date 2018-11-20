@@ -67,14 +67,21 @@
             </div>
         </div>
         <div class="content-left__signup-form">
-          <div class="signup-form__subtitle">Sign up and we will let you know
-            about launch date! &nbsp;<span>🚀</span> </div>
-            <form class="signup-form" id="form_id" action="" method="post"
-            onsubmit="javascript:return validate('form_id','email');">
+          <div class="signup-form__subtitle">
+            Sign up and we will let you know
+            about launch date! &nbsp;<span>🚀</span>
+          </div>
+            <form
+              id="subscription-form"
+              class="signup-form"
+              action="subscribtion.php"
+              method="post"
+              name="subscriptionform"
+            >
               <input type="email" name="email" class="signup-form__input" placeholder="Enter your email">
               <input class="signup-form__submit" type="submit" value="Start economize"/>
+              <div class="signup-form__error"></div>
             </form>
-            <div class="signup-form__error">Error message!</div>
 
         </div>
         <div class="content-socials">
