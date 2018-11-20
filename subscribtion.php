@@ -7,13 +7,14 @@
     $email_subject = "User subscribtion";
     $to = "hello@monup.co";
     $from = "hello@monup.co";
+    $message = 'hello';
     $headers = "From: $user_email" . "\r\n" .
     "Reply-To: <$user_email>";
 
     if(!preg_match($email_exp, $user_email)) {
       $error_message = 'The Email Address you entered does not appear to be valid.<br />';
     }
-    $mail = mail($to, $email_subject, 'Message', $headers, "-f " . $from);
+    $mail = mail($to, $email_subject, $message, $headers, "-f " . $from);
     echo $mail;
     if ($mail) {
       echo "Thank you for using our mail form";
