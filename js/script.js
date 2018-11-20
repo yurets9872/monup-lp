@@ -1,11 +1,12 @@
-function validate(form_id,email) {
-  console.log('it works');
-   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-   var address = document.forms[form_id].elements[email].value;
-   var errorEl = document.getElementsByClassName('.signup-form__error')[0];
-   if(reg.test(address) == false) {
-     console.log(errorEl);
-      errorEl.innerHTML('Enter correct email!');
-      return false;
-       }
-}
+let form = document.forms['subscription-form'];
+let error = document.getElementsByClassName('signup-form__error')[0];
+let emailPattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+form.addEventListener('submit', (e) => {
+  let email = form.elements['email'].value;
+  if (email.length === 0 || emailPattern.test(email) == false) {
+    e.preventDefault();
+    error.style.display = "block";
+    error.innerHTML = 'Please, enter correct email!';
+  }
+});
