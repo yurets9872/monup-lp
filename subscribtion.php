@@ -6,7 +6,7 @@
     $user_email = $_POST['email'];
     $email_subject = "User subscribtion";
     $to = "<yurets.ua@gmail.com>";
-    $headers = "From: <$user_email>" . "\r\n"
+    $headers = "From: <$user_email>" . "\r\n" .
     "Reply-To: <$user_email>";
 
     if(!preg_match($email_exp, $user_email)) {
