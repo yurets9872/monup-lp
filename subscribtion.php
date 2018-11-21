@@ -5,11 +5,11 @@
 
     $user_email = $_POST['email'];
     $subject = "User subscribtion";
-    $to = "hello@monup.co";
+    $to = "julia.lukanyuk@gmail.com";
     $message = 'hello';
     $headers = array(
-      "From: $user_email",
-      "Reply-To: $user_email",
+      "From: hello@monup.co",
+      "Reply-To: hello@monup.co",
       "X-Mailer: PHP/" . PHP_VERSION
     );
 
@@ -17,10 +17,11 @@
       $error_message = 'The Email Address you entered does not appear to be valid.<br />';
     }
     $mail = mail($to, $subject, $message, $headers);
+
     if ($mail) {
       echo "Thank you for using our mail form";
     } else {
-      echo $headers;
+      echo "Mail sending failed.";
     }
   }
 ?>
