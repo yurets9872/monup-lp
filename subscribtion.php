@@ -1,10 +1,22 @@
 <?php
-  if(isset($_POST['email'])) {
-    $error_message = "";
-    $email_exp = '/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/';
+  function IsInjected($str) {
+    $injections = array('(\n+)', '(\r+)', '(\t+)', '(%0A+)', '(%0D+)', '(%08+)', '(%09+)');
+    $inject = join('|', $injections);
+    $inject = "/$inject/i";
+    
+    if (preg_match($inject,$str)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+?>
 
+<?php
+  if(isset($_POST['email'])) {
+    $email_exp = '/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/';
     $user_email = $_POST['email'];
-    $email_subject = "User subscribtion";
+    $subject = "User subscribtion";
     $to = "hello@monup.co";
     $message = 'Let me know when launching';
     $headers = array(
@@ -14,15 +26,22 @@
     );
     $headers = implode("\r\n", $headers);
     
+    if(IsInjected($user_email)) {
+      $response->result = false;
+      $response->errorCode = 2;
+      echo json_encode($response);
+      exit;
+    }
+    
     if(!preg_match($email_exp, $user_email)) {
-      $error_message = 'The Email Address you entered does not appear to be valid.<br />';
+      $response->result = false;
+      $response->errorCode = 1;
+      echo json_encode($response);
     } else {
       $mail = mail($to, $subject, $message, $headers);
-      if ($mail) {
-        echo "Thank you for subscribtion!";
-      } else {
-        echo "Mail sending failed.";
-      }
+      $response->result = $mail;
+      $response->errorCode = '';
+      echo json_encode($response);
     }
   }
 ?>

@@ -14,7 +14,7 @@
   </head>
   <body>
 
-  <div class="modal-overlay">
+  <div class="modal-overlay main-modal-js">
     <div class="modal-block">
       <div class="modal_emoji">🏆</div>
       <div class="modal_title">Thank you for subsribing!</div>
@@ -30,16 +30,16 @@
               <img class="header__logo" src="../img/logo-white.svg" alt="Monup">
             </div>
             <nav class="header__nav">
-              <a href="#NULL">About</a>
-              <a href="#NULL">Features</a>
-              <a href="#NULL">Pricing</a>
-              <a href="#NULL">Blog</a>
+              <a href="#">About</a>
+              <a href="#">Features</a>
+              <a href="#">Pricing</a>
+              <a href="#">Blog</a>
             </nav>
             <div class="header__market-links">
               <div class="market-links__play-market">
-                <img class="play-market__image" src="i../mg/GooglePlay/playmarket.png"
+                <img class="play-market__image" src="../img/GooglePlay/playmarket.png"
                        srcset="../img/GooglePlay/playmarket@2x.png 2x,
-                               i../mg/GooglePlay/playmarket@3x.png 3x"
+                               ../img/GooglePlay/playmarket@3x.png 3x"
                                alt="Play Market">
               </div>
               <div class="market-links__app-store">
@@ -66,20 +66,25 @@
         <div class="content-left__signup-form">
           <div class="signup-form__subtitle">Zostaw swoją pocztę, a my powiadomimy Cię o dacie uruchomienia aplikacji!
             &nbsp;<span>🚀</span> </div>
-            <form class="signup-form" id="form_id" action="" method="post"
-            onsubmit="javascript:return validate('form_id','email');">
-              <input type="email" name="email" class="signup-form__input" placeholder="Moja poczta">
-              <input class="signup-form__submit" type="submit" value="Powiadom mnie"/>
+            <form
+              id="subscription-form"
+              class="signup-form"
+              action="../subscribtion.php"
+              method="post"
+              name="subscriptionform"
+            >
+              <input type="text" name="email" class="signup-form__input" placeholder="Enter your email">
+              <input class="signup-form__submit" type="submit" value="Start economize"/>
+              <p class="signup-form__error signup-form-error-js"></p>
             </form>
-            <div class="signup-form__error">Error message!</div>
 
         </div>
         <div class="content-socials">
           <div class="socials__caption">Dołącz do nas:</div>
           <div class="socials__box">
-            <a target="_blank" class="socials__buttons" href="https://www.facebook.com/appmonup"> <img src="img/socialIcons/Facebook.svg" alt="Facebook"> Facebook </a>
-            <a target="_blank" class="socials__buttons" href="https://twitter.com/appmonup"> <img src="img/socialIcons/Twitter.svg" alt="twitter"> Twitter </a>
-            <a target="_blank" class="socials__buttons" href="https://www.instagram.com/appmonup/"> <img src="img/socialIcons/Instagram.svg" alt="Instagram"> Instagram </a>
+            <a target="_blank" class="socials__buttons" href="https://www.facebook.com/appmonup"> <img src="../img/socialIcons/Facebook.svg" alt="Facebook"> Facebook </a>
+            <a target="_blank" class="socials__buttons" href="https://twitter.com/appmonup"> <img src="../img/socialIcons/Twitter.svg" alt="twitter"> Twitter </a>
+            <a target="_blank" class="socials__buttons" href="https://www.instagram.com/appmonup/"> <img src="../img/socialIcons/Instagram.svg" alt="Instagram"> Instagram </a>
             <!-- <a class="socials__buttons" href="#"> <img src="../img/socialIcons/Telegram.svg" alt="Telegram"> Telegram </a> -->
           </div>
 
@@ -122,9 +127,6 @@
     </footer>
     </div>
 
-
-  <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
-
-
 </html>
