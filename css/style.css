@@ -14,38 +14,42 @@
 }
 
 body{
-  /* background: linear-gradient(119deg, #00cc81, #d5e969); */
   background-image: linear-gradient(137deg, #00CC81 0%, #D5E969 100%);
-  height: 100%;
   position: relative;
-
 }
-
-
+.icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
 
 .modal-overlay{
+  background-color: rgba(0,0,0,0.5);
   display: none;
-  position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 5000;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: 5000;
 }
 .modal-block{
-  width: 600px;
-  /* height: 320px; */
-  padding: 48px;
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.24);
   background: #fff;
   border-radius: 3px;
+  left: 50%;
+  padding: 48px;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.24);
+  width: 600px;
 }
-.modal_emoji{
+.icon.trophy{
+  background-image: url('../img/emoji/trophy.png');
+  background-size: 48px;
+  display: block;
+  height: 48px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 48px;
+  width: 48px;
 }
 .modal_title{
   text-align: center;
@@ -55,24 +59,24 @@ body{
 }
 .modal_copy{
   text-align: center;
-    font-family: 'Manrope-Regular', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    margin: 24px 0;
-    color: #959595;
+  font-family: 'Manrope-Regular', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 24px 0;
+  color: #959595;
 }
 
 .wrapper{
- min-height: 100vh; /* will cover the 100% of viewport */
- overflow: hidden;
- display: block;
- position: relative;
- padding-bottom: 64px; /* height of your footer */
+  display: block;
+  overflow: hidden;
+  min-height: 100vh; /* will cover the 100% of viewport */
+  position: relative;
+  padding-bottom: 64px;
 }
 
 header{
-background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0));
-margin-bottom: 64px
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0));
+  margin-bottom: 64px;
 }
 .header__container{
   max-width: 1140px;
@@ -83,10 +87,11 @@ margin-bottom: 64px
   align-items: center;
 }
 .header__logo-wrapper{
-  width: 122px;
-  height: 33px;
-  object-fit: contain;
   float: left;
+  flex-shrink: 0;
+  object-fit: contain;
+  margin-top: 10px;
+  width: 122px;
 }
 .header__logo{
   width: 100%;
@@ -119,13 +124,11 @@ margin-bottom: 64px
 
 /* CONTENT */
 .content{
-  max-width: 1140px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
+  max-width: 1140px;
+  margin: auto;
   position: relative;
-  z-index: 1000;
-  margin-bottom: 80px;
 
 }
 .content-left__heading{
@@ -143,22 +146,24 @@ margin-bottom: 64px
   font-family: 'Manrope-Semibold',sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.4px;
   text-align: left;
   color: var(--primary-white);
-  /* opacity: 0.8; */
 }
 .content-left__signup-form{
   margin: 48px 0 0;
-  /* padding: 24px 8px 32px 24px; */
   padding: 32px;
   background-color: var(--primary-white);
   border-radius: 5px;
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.08);
 }
+.signup-form {
+  display: flex;
+}
 .signup-form__input{
   font-family: 'Manrope-Semibold',sans-serif;
   font-size: 14px;
+  flex: 1;
   line-height: 1.33;
   text-align: left;
   color: var(--primary-black);
@@ -209,8 +214,13 @@ margin-bottom: 64px
   color: rgba(23, 177, 103, 1);
   color: #6a6a6a;
 }
-.signup-form__subtitle span{
-  font-size: 18px;
+.signup-form__subtitle .rocket {
+  background-image: url('../img/emoji/rocket.png');
+  background-size: 18px;
+  height: 18px;
+  line-height: 21px;
+  margin-bottom: -2px;
+  width: 18px;
 }
 
 .signup-form__error{
@@ -225,18 +235,18 @@ margin-bottom: 64px
 .content-socials{
   max-width: 590px;
   margin-top: 40px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .socials__caption{
   font-family: 'Manrope-Semibold',sans-serif;
   font-size: 14px;
-  text-align: left;
   color: var(--primary-white);
-  margin-bottom: 8px
+  margin-bottom: 24px;
 }
 .socials__box{
   display: flex;
-  flex-wrap: wrap;
 }
 .socials__buttons{
   padding: 8px 12px;
@@ -249,17 +259,16 @@ margin-bottom: 64px
   line-height: 32px;
   color: var(--primary-white);
   margin-right: 16px;
-  margin-top: 16px;
   transition: background-color .15s ease-in-out;
 }
 .socials__buttons img{
-  width: 20px;
   height: 20px;
   margin-right: 8px;
   position: relative;
-  top: 4px;
-
+  vertical-align: middle;
+  width: 20px;
 }
+
 .socials__buttons:hover{
   background-color: rgba(255,255,255,0.40);
 }
@@ -269,56 +278,44 @@ margin-bottom: 64px
 }
 
 .content-right{
+  box-sizing: content-box;
+  max-width: 400px;
+  padding-right: 32px;
+  padding-bottom: 99px;
   position: relative;
-  max-width: 350px;
   width: 100%;
 }
 .content-right__iphone{
-  position: absolute;
-    right: 132px;
-    z-index: 10;
-    max-width: 330px;
-    width: 100%;
+  max-width: 330px;
+  position: relative;
+  width: 100%;
+  z-index: 10;
 }
 .content-right__iphone img{
   width: 100%;
 }
 .content-right__pixel{
+  left: 0;
+  max-width: 300px;
   position: absolute;
-    top: 96px;
-    right: 32px;
-    z-index: 9;
-    max-width: 300px;
-    width: 100%;
+  top: 0;
+  transform: translate(132px, 96px);
+  width: 100%;
+  z-index: 9;
 }
 .content-right__pixel img{
   width: 100%;
 }
 
-
-
-.Bg_image{
-  background-image: url(../img/rounds.svg);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-position: 250% 50%;
-  background-repeat: no-repeat;
-  z-index: 100;
-  display: none;
-}
-
-
 /* FOOTER */
 
 footer{
-  width: 100%;
   background-color: var(--primary-white);
-  position: absolute;
   bottom: 0;
-  height: 64px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
 }
 .footer__container{
   max-width: 1140px;
@@ -358,21 +355,9 @@ footer{
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
-  text-overflow: '';
 }
-/* .footer__languages .flag{
-  font-size: 12px;
-  height: 24px;
-  text-align: left;
-  padding-top: 6px;
-} */
-
-
-
 
 /* MEDIA QUERIES */
-
-
 @media screen and (max-width:1370px){
   header{
     margin-bottom: 32px;
@@ -380,33 +365,35 @@ footer{
   .content-left{
     margin-top: -40px;
   }
+  .content-right {
+    padding-bottom: 53px;
+  }
   .content-right__iphone{
     max-width: 300px;
-    width: 100%;
   }
   .content-right__pixel{
-    max-width: 300px;
-    width: 100%;
-    top: 48px;
+    transform: translate(100px, 48px);
   }
 }
 
 
+@media screen and (max-width: 1180px) {
+  header,
+  footer,
+  .content {
+    padding: 0 20px;
+  }
+  .content-right {
+    padding-right: 0;
+  }
+}
+
 @media screen and (max-width:1024px) {
-  .header__container, .footer__container{
-    max-width: 960px;
-  }
-  .content{
-    max-width: 960px;
-  }
   .content-left__heading {
     max-width: 460px;
   }
   .heading__title{
     font-size: 48px;
-  }
-  .heading__copy{
-    font-size: 16px;
   }
   .content-left__signup-form{
     margin: 24 0 0;
@@ -415,26 +402,25 @@ footer{
   .signup-form__input{
     width: 240px;
   }
+  .content-right {
+    max-width: 370px;
+  }
+  .content-right__iphone {
+    max-width: 280px;
+  }
+  .content-right__pixel {
+    max-width: 280px;
+  }
 }
 
 
 @media screen and (max-width:800px) {
-  .header__container, .footer__container{
-    max-width: 720px;
-  }
   .content{
-    max-width: 720px;
     flex-wrap: wrap;
   }
 
   .content-left__heading {
-    max-width: 680px;
-  }
-  .heading__title{
-    font-size: 52px;
-  }
-  .heading__copy{
-    font-size: 18px;
+    max-width: 100%;
   }
   .content-left__signup-form{
     margin: 24 0 0;
@@ -443,29 +429,25 @@ footer{
     max-width: 560px;
   }
   .signup-form__input{
+    box-sizing: border-box;
     max-width: 320px;
     width: 100%;
-    box-sizing: border-box;
   }
   .content-right {
-    margin: 64px auto;
+    margin: 48px auto 16px;
     position: relative;
-    width: 280px;
-    z-index: 100;
+    width: 400px;
   }
-  footer{
-    z-index: 1000;
+  .socials__buttons{
+    font-size: 12px;
+    margin-right: 15px;
+  }
+  .content-socials {
+    margin-bottom: 0;
   }
 }
 
 @media screen and (max-width:425px) {
-  .header__container, .footer__container{
-    max-width: 360px;
-  }
-  .content{
-    max-width: 360px;
-    margin-bottom: 564px;
-  }
   .header__nav{
     display: none;
   }
@@ -483,19 +465,22 @@ footer{
   }
   .heading__copy{
     font-size: 14px;
-    line-height: 20px;
+    line-height: 1.4;
   }
   .socials__buttons{
+    color: transparent;
+    font-size: 0;
     padding: 6px 10px;
-    margin-right: 8px;
-    font-size: 14px;
+    margin-right: 0;
+    text-align: center;
+    width: 44px;
   }
-  .socials__buttons img{
-    width: 18px;
+  .socials__buttons img {
+    margin-right: 0;
   }
   .signup-form{
+    flex-direction: column;
     width: 100%;
-    max-width: 360px;
   }
   .signup-form__submit{
     max-width: 312px;
@@ -503,102 +488,29 @@ footer{
     margin-top: 16px;
     text-align: center;
   }
-  .content-right{
-    width: 100%;
-    right: -66px;
-  }
-  footer {
-    z-index: 1000;
-    height: 104px;
-}
-.footer__container{
-  display: flex;
-  flex-direction: column;
-}
-.footer__copyright{
-  padding: 28px 0;
-}
-}
-
-@media screen and (max-width:375px) {
-  .header__container, .footer__container{
-    max-width: 320px;
-  }
-  .content{
-    max-width: 340px;
-    margin-bottom: 564px;
-  }
-  .header__nav{
+  .content-right__iphone {
     display: none;
   }
-  .market-links__app-store{
-    margin-left: 10px;
+  .content-right__pixel {
+    margin: 0 auto;
+    position: relative;
+    transform: none;
   }
-
-  .heading__title {
-    font-size: 38px;
+  .socials__caption {
+    text-align: center;
   }
-  .signup-form{
-    width: 100%;
-    max-width: 340px;
+  .socials__box {
+    justify-content: space-between;
+    max-width: 164px;
+    margin: 0 auto;
   }
-  .signup-form__input{
-    max-width: 292px;
-    width: 100%;
+  .footer__container{
+    height: auto;
+    flex-direction: column;
+    padding: 20px 0;
   }
-  .socials__buttons{
-  font-size: 0;
-  color: transparent;
-  margin-right: 16px;
-  }
-  .socials__buttons img{
-    width: 20px;
-    top: 8px;
-    left: 4px;
-  }
-  .content-right{
-    width: 100%;
-    right: -66px;
-  }
-}
-@media screen and (max-width:320px) {
-  .wrapper{
-    padding-bottom: 0;
-  }
-  .header__container, .footer__container{
-    max-width: 320px;
-    padding: 0 16px;
-  }
-  .content{
-    max-width: 290px;
-    margin-bottom: 564px;
-  }
-  .header__logo{
-    height: 28px;
-  }
-  .header__nav{
-    display: none;
-  }
-  .market-links__app-store{
-    margin-left: 10px;
-  }
-  .market-links__app-store img{
-    height: 22px;
-  }
-  .market-links__play-market img{
-    height: 22px;
-  }
-  .signup-form{
-    width: 100%;
-    max-width: 340px;
-  }
-  .signup-form__input{
-    max-width: 257px;
-    width: 100%;
-  }
-  .content-right{
-    width: 80%;
-    right: -82px;
-
+  .footer__copyright{
+    order: 1;
+    margin-top: 16px;
   }
 }

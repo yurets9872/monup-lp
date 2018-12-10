@@ -16,7 +16,7 @@
 
   <div class="modal-overlay main-modal-js">
     <div class="modal-block">
-      <div class="modal_emoji">🏆</div>
+      <div class="icon trophy"></div>
       <div class="modal_title">Thank you for subsribing!</div>
       <div class="modal_copy">Welcome to Monup team. We will notify you when you
         will be able to use the Monup!</div>
@@ -66,19 +66,19 @@
         <div class="content-left__signup-form">
           <div class="signup-form__subtitle">Оставте свою почту и мы сообщим вам
             о дате запуска приложения!
-            &nbsp;<span>🚀</span> </div>
-            <form
-              id="subscription-form"
-              class="signup-form"
-              action="../subscribtion.php"
-              method="post"
-              name="subscriptionform"
-            >
-              <input type="text" name="email" class="signup-form__input" placeholder="Enter your email">
-              <input class="signup-form__submit" type="submit" value="Start economize"/>
-              <p class="signup-form__error signup-form-error-js"></p>
-            </form>
-
+            <span class="icon rocket"></span>
+          </div>
+          <form
+            id="subscription-form"
+            class="signup-form"
+            action="../subscribtion.php"
+            method="post"
+            name="subscriptionform"
+          >
+            <input type="text" name="email" class="signup-form__input" placeholder="Enter your email">
+            <input class="signup-form__submit" type="submit" value="Start economize"/>
+          </form>
+          <p class="signup-form__error signup-form-error-js"></p>
         </div>
         <div class="content-socials">
           <div class="socials__caption">Следите за нами в:</div>
@@ -105,21 +105,15 @@
                 class="Google-Pixel" alt="Google Pixel II example">
         </div>
       </div>
-
     </div>
-
-    <div class="Bg_image"></div>
-
     <footer>
         <div class="footer__container">
           <div class="footer__copyright">© 2018 Monup. Все права сохранены.</div>
           <div class="footer__languages">
-            <!-- <div class="languages__caption">Выберете ваш язык:</div> -->
             <select name="forma" onchange="location = this.value;">
-              <option value="0"><div class="flag">🇷🇺</div>&nbsp Russian</option>
-              <option value="../ua/index.html"><div class="flag">🇺🇦</div>&nbsp Ukrainian</option>
-              <option value="../index.html"><div class="flag">🇺🇸</div>&nbsp English</option>
-              <option value="../pl/index.html"><div class="flag">🇵🇱</div>&nbsp Polish</option>
+              <option value="0">&nbsp Russian</option>
+              <option value="../ua/index.html">&nbsp Ukrainian</option>
+              <option value="../index.html">&nbsp English</option>
             </select>
           </div>
         </div>

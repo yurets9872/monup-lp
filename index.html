@@ -10,7 +10,6 @@
     <!-- STYLES  -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <!-- <link rel="stylesheet" href="css/circular-std.css"> -->
     <link rel="stylesheet" href="css/manrope-font.css">
 
     <title>Monup - budget management tool</title>
@@ -19,7 +18,7 @@
 
   <div class="modal-overlay main-modal-js">
     <div class="modal-block">
-      <div class="modal_emoji">🏆</div>
+      <div class="icon trophy"></div>
       <div class="modal_title">Thank you for subsribing!</div>
       <div class="modal_copy">Welcome to Monup team. We will notify you when you
         will be able to use the Monup!</div>
@@ -69,20 +68,20 @@
         <div class="content-left__signup-form">
           <div class="signup-form__subtitle">
             Sign up and we will let you know
-            about launch date! &nbsp;<span>🚀</span>
+            about launch date!
+            <span class="icon rocket"></span>
           </div>
-            <form
-              id="subscription-form"
-              class="signup-form"
-              action="subscribtion.php"
-              method="post"
-              name="subscriptionform"
-            >
-              <input type="text" name="email" class="signup-form__input" placeholder="Enter your email">
-              <input class="signup-form__submit" type="submit" value="Start economize"/>
-              <p class="signup-form__error signup-form-error-js"></p>
-            </form>
-
+          <form
+            id="subscription-form"
+            class="signup-form"
+            action="subscribtion.php"
+            method="post"
+            name="subscriptionform"
+          >
+            <input type="text" name="email" class="signup-form__input" placeholder="Enter your email">
+            <input class="signup-form__submit" type="submit" value="Start economize"/>
+          </form>
+          <p class="signup-form__error signup-form-error-js"></p>
         </div>
         <div class="content-socials">
           <div class="socials__caption">Also follow us on:</div>
@@ -112,26 +111,20 @@
 
     </div>
 
-    <div class="Bg_image"></div>
-
     <footer>
         <div class="footer__container">
           <div class="footer__copyright">© 2018 Monup. All rights reserved.</div>
           <div class="footer__languages">
-            <!-- <div class="languages__caption">Choose your language:</div> -->
             <select name="forma" onchange="location = this.value;">
-              <option value="0"><div class="flag">🇺🇸</div>&nbsp English</option>
-              <option value="ua/index.html"><div class="flag">🇺🇦</div>&nbsp Ukrainian</option>
-              <option value="ua/index.html"><div class="flag">🇷🇺</div>&nbsp Russian</option>
-              <option value="ua/index.html"><div class="flag">🇵🇱</div>&nbsp Polish</option>
+              <option value="0">&nbsp English</option>
+              <option value="ua/index.html">&nbsp Ukrainian</option>
+              <option value="ru/index.html">&nbsp Russian</option>
             </select>
-
-
           </div>
         </div>
     </footer>
     </div>
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
