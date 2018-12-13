@@ -396,7 +396,7 @@ footer{
     font-size: 48px;
   }
   .content-left__signup-form{
-    margin: 24 0 0;
+    margin: 24px 0 0;
     padding: 24px;
   }
   .signup-form__input{
@@ -444,6 +444,9 @@ footer{
   }
   .content-socials {
     margin-bottom: 0;
+  }
+  .footer__languages select{
+    width: auto;
   }
 }
 
